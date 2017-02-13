@@ -5,7 +5,6 @@ var app = express();
 app.use(bodyParser.json());
 
 PORT = 	process.env.PORT || "3005";
-BIND_IP = process.env.BIND_IP || "192.168.1.155";
 
 app.get('/badge', function(req,res){
 
@@ -20,7 +19,7 @@ app.get('/badge', function(req,res){
 });
 
 
-app.listen(PORT, BIND_IP, function() 
+app.listen(PORT, function() 
 {
 	console.log("* listening service in "+ BIND_IP + ":" + PORT);
 }).on('error', function(err) 
