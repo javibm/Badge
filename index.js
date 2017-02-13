@@ -19,6 +19,10 @@ app.get('/badge', function(req,res){
 	});
 });
 
+app.get('/runner', function(req,res){
+	res.sendFile(__dirname + '/runner.html')
+});
+
 
 app.listen(PORT, function() 
 {
