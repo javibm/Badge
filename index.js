@@ -98,6 +98,51 @@ app.get('/dodgepro/running', function(req,res){
 	});
 });
 
+app.get('/clicker/passing', function(req,res){
+	// Optional step, to have accurate text width computation.
+	badge.loadFont('/path/to/Verdana.ttf', function(err) {
+	  badge({ text: ["Clicker", "passing"], colorscheme: "green", template: "flat-square" },
+	    function(svg, err) {
+		     fs.writeFile("clicker.html", svg, function(err) {
+			    if(err) {
+			        return console.log(err);
+			    }
+			    res.sendStatus(200);
+			}); 
+	    });
+	});
+});
+
+app.get('/clicker/failed', function(req,res){
+	// Optional step, to have accurate text width computation.
+	badge.loadFont('/path/to/Verdana.ttf', function(err) {
+	  badge({ text: ["Clicker", "failed"], colorscheme: "red", template: "flat-square" },
+	    function(svg, err) {
+		     fs.writeFile("clicker.html", svg, function(err) {
+			    if(err) {
+			        return console.log(err);
+			    }
+			    res.sendStatus(200);
+			}); 
+	    });
+	});
+});
+
+app.get('/clicker/running', function(req,res){
+	// Optional step, to have accurate text width computation.
+	badge.loadFont('/path/to/Verdana.ttf', function(err) {
+	  badge({ text: ["Clicker", "running"], colorscheme: "blue", template: "flat-square" },
+	    function(svg, err) {
+		     fs.writeFile("clicker.html", svg, function(err) {
+			    if(err) {
+			        return console.log(err);
+			    }
+			    res.sendStatus(200);
+			}); 
+	    });
+	});
+});
+
 app.get('/runner', function(req,res){
     res.setHeader('content-type', 'image/svg+xml');
 	res.sendFile(__dirname + '/runner.html')
@@ -106,6 +151,11 @@ app.get('/runner', function(req,res){
 app.get('/dodgepro', function(req,res){
     res.setHeader('content-type', 'image/svg+xml');
 	res.sendFile(__dirname + '/dodgepro.html')
+});
+
+app.get('/clicker', function(req,res){
+    res.setHeader('content-type', 'image/svg+xml');
+	res.sendFile(__dirname + '/clicker.html')
 });
 
 
