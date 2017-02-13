@@ -13,6 +13,7 @@ app.get('/badge', function(req,res){
 	badge.loadFont('/path/to/Verdana.ttf', function(err) {
 	  badge({ text: ["build", "passed"], colorscheme: "green", template: "flat" },
 	    function(svg, err) {
+	     res.setHeader('content-type', 'image/svg+xml');
 	     res.send(svg);
 	    });
 	});
