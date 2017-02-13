@@ -20,6 +20,7 @@ app.get('/badge', function(req,res){
 });
 
 app.get('/runner', function(req,res){
+    res.setHeader('content-type', 'image/svg+xml');
 	res.sendFile(__dirname + '/runner.html')
 });
 
