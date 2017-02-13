@@ -21,7 +21,7 @@ app.get('/badge', function(req,res){
 
 app.listen(PORT, function() 
 {
-	console.log("* listening service in "+ BIND_IP + ":" + PORT);
+	console.log("* listening service in " + ":" + PORT);
 }).on('error', function(err) 
 { 
 	console.log("* initializing error: "+ err);
